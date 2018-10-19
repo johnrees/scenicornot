@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lat: 9.99
+  lon: 9.99
+  average: 9.99
+  variance: 9.99
+  votes: 1
+  geograph_uri: MyText
+  src: MyText
+
+two:
+  lat: 9.99
+  lon: 9.99
+  average: 9.99
+  variance: 9.99
+  votes: 1
+  geograph_uri: MyText
+  src: MyText
