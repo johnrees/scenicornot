@@ -1,0 +1,22 @@
+<table>
+<thead>
+<tr>
+<th><%= sort_link(@q, :id) %></th>
+<th><%= sort_link(@q, :average_int, "Avg") %></th>
+<th><%= sort_link(@q, :variance, "Variance") %></th>
+<th><%= sort_link(@q, :num_votes, "# votes") %></th>
+<th>img</th>
+</tr>
+</thead>
+<% @scenes.each do |scene| %>
+<tr>
+<td><%= scene.id %></td>
+<td title="<%= scene.votes %>"><%= scene.average %></td>
+<td><%= scene.variance %></td>
+<td><%= scene.num_votes %></td>
+<td><%= link_to scene.geograph_uri do %><%= image_tag scene.img_url %><% end %></td>
+</tr>
+<% end %>
+</table>
+
+<%= paginate @scenes %>

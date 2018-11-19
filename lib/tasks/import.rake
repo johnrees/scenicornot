@@ -16,4 +16,16 @@ namespace :import do
       end
     end
   end
+
+  task thumbnails: :environment do
+    Scene.where(data: {}).order(average_int: :desc).each do |scene|
+      begin
+        scene.update_attribute(:data, scene.raw_data)
+        p scene.id
+        sleep(rand(5))
+      rescue
+        p "no #{scene.id}"
+      end
+    end
+  end
 end
