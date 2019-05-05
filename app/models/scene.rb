@@ -4,6 +4,9 @@ require 'open-uri'
 require 'json'
 
 class Scene < ApplicationRecord
+
+  reverse_geocoded_by :latitude, :longitude
+
   def average
     average_int / 10_000.0000
   end
