@@ -7,7 +7,8 @@ namespace :detect do
     Scene.where(labels_data: nil).each do |scene|
       response = image_annotator.label_detection image: scene.data['url']
       scene.update_attribute(:labels_data, response.responses.to_json)
-      p scene
+      sleep(1)
+      p scene.id
     end
   end
 end
