@@ -5,10 +5,13 @@ namespace :detect do
     image_annotator = Google::Cloud::Vision::ImageAnnotator.new
 
     Scene.where(labels_data: nil).each do |scene|
-      response = image_annotator.label_detection image: scene.data['url']
-      scene.update_attribute(:labels_data, response.responses.to_json)
-      sleep(1)
-      p scene.id
+      begin
+        response = image_annotator.label_detection image: scene.data['url']
+        scene.update_attribute(:labels_data, response.responses.to_json)
+        p scene.id
+      rescue
+        p "ERROR FOR #{scene.id}"
+      end
     end
   end
 end
