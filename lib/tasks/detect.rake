@@ -12,8 +12,8 @@ namespace :detect do
       rescue StandardError => e
         p "ERROR FOR #{scene.id}, #{e.message}"
       end
-      sleep(3)
     end
+    Scene.connection.reconnect!
 
   end
 end
