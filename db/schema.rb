@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_223440) do
+ActiveRecord::Schema.define(version: 2019_05_28_093117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2019_05_05_223440) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "labels_data"
+    t.text "lad17cd"
+    t.text "lad17nm"
     t.index ["average_int", "num_votes"], name: "index_scenes_on_average_int_and_num_votes"
     t.index ["latitude", "longitude"], name: "index_scenes_on_latitude_and_longitude"
     t.index ["variance_int"], name: "index_scenes_on_variance_int"
